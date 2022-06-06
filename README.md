@@ -29,10 +29,10 @@ $ yarn
 $ yarn dev
 ```
 
-Para utilizar a API pode acessar o endereço http://localhost:3333 através do [Insomnia](https://insomnia.rest/download) ou pela documentação do Swagger http://localhost:3333/api-docs
+Para utilizar a API após inicializada pode acessar o endereço http://localhost:3333 através do [Insomnia](https://insomnia.rest/download) ou pela documentação do Swagger http://localhost:3333/api-docs
 
 ## 💻 Projeto
 
 RentalX é um projeto para alugueis de carros. Sendo possível a criação de categorias e especificações para os carros.
 
-Feito por Eric Macedo 🌌  👋🏻 [LinkedIn](https://www.linkedin.com/in/eric-macedo-dev/)
+Feito por Eric Macedo 🌌  [LinkedIn](https://www.linkedin.com/in/eric-macedo-dev/)
