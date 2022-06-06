@@ -1,0 +1,165 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API RentalX",
+    "description": "This is an API rental cars",
+    "version": "1.0.0",
+    "contact": {
+      "email": "ericthr42@gmail.com"
+    }
+  },
+  "tags": [
+    {
+      "name": "Categories",
+      "description": "Categories management"
+    }
+  ],
+  "paths": {
+    "/categories": {
+      "post": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Create a new cars category",
+        "description": "To create a new cars category, add the 'name' and 'description' fields in the request body.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "name",
+                  "description"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": "string"
+                },
+                "example": {
+                  "name": "Sedan",
+                  "description": "Automóvel com três volumes"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Category successfully created"
+          },
+          "400": {
+            "description": "Category already exists"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "List all cars categories",
+        "description": "List all cars categories, but only if exist at least one category.",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "204": {
+            "description": "No content"
+          }
+        }
+      }
+    },
+    "/categories/import": {
+      "post": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Import car category by a file",
+        "description": "To import a car category you need a file",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Category successfully created"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/specifications": {
+      "post": {
+        "tags": [
+          "Specifications"
+        ],
+        "summary": "Create a new cars specifications",
+        "description": "To create a new cars specifications specification, add the 'name' and 'description' fields in the request body",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "name",
+                  "description"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": "string"
+                },
+                "example": {
+                  "name": "Câmbio",
+                  "description": "Câmbio manual"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Specification successfully created"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Specifications"
+        ],
+        "summary": "List all cars specifications",
+        "description": "List all cars specifications, but only if exist at least one category.",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "201": {
+            "description": "No content"
+          }
+        }
+      }
+    }
+  }
+}
