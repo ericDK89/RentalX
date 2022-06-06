@@ -37,10 +37,6 @@ export class CategoriesRepository implements ICategoryRepository {
       (category) => category.name === name
     );
 
-    if (existsCategory) {
-      throw Error("Category already exists");
-    }
-
     return existsCategory;
   }
 
